@@ -9,5 +9,6 @@
         public decimal Rate { get; set; }
         public decimal BuyingPrice { get; set; }
         public string ConfidentialData { get; set; }
+        public string SKU { get; set; }
     }
 }
