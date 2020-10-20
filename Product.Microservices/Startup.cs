@@ -42,8 +42,6 @@ namespace Product.Microservices
             });
 
             services.AddControllers();
-
-            services.AddMediatR(Assembly.GetExecutingAssembly());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
