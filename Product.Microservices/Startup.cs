@@ -29,7 +29,6 @@ namespace Product.Microservices
 
             services.AddScoped<IProductDbContext>(provider => provider.GetService<ProductDbContext>());
             services.AddMediatR(Assembly.GetExecutingAssembly());
-            //services.AddMediatR(typeof(Startup).GetTypeInfo().Assembly);
 
             services.AddSwaggerGen(c =>
             {
