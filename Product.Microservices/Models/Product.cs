@@ -10,5 +10,6 @@
         public decimal BuyingPrice { get; set; }
         public string ConfidentialData { get; set; }
         public string SKU { get; set; }
+        public int Age { get; set; }
     }
 }
