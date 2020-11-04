@@ -1,8 +1,12 @@
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
 
 namespace Product.Microservices
 {
@@ -19,23 +23,23 @@ namespace Product.Microservices
         // Added another test comment to see if now, the whole thing works
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<ProductDbContext>(options =>
-            //    options.UseSqlServer(
-            //        Configuration.GetConnectionString("ProductConnection"),
-            //        b => b.MigrationsAssembly(typeof(ProductDbContext).Assembly.FullName)));
+            services.AddDbContext<ProductDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("ProductConnection"),
+                    b => b.MigrationsAssembly(typeof(ProductDbContext).Assembly.FullName)));
 
-            //services.AddScoped<IProductDbContext>(provider => provider.GetService<ProductDbContext>());
-            //services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddScoped<IProductDbContext>(provider => provider.GetService<ProductDbContext>());
+            services.AddMediatR(Assembly.GetExecutingAssembly());
 
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.IncludeXmlComments(string.Format(@"{0}\Product.Microservices.xml", System.AppDomain.CurrentDomain.BaseDirectory));
-            //    c.SwaggerDoc("v1", new OpenApiInfo
-            //    {
-            //        Version = "v1",
-            //        Title = "Product.Microservices"
-            //    });
-            //});
+            services.AddSwaggerGen(c =>
+            {
+                c.IncludeXmlComments(string.Format(@"{0}\Product.Microservices.xml", System.AppDomain.CurrentDomain.BaseDirectory));
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Product.Microservices"
+                });
+            });
 
             services.AddControllers();
         }
@@ -54,12 +58,12 @@ namespace Product.Microservices
 
             app.UseAuthorization();
 
-            //app.UseSwagger();
+            app.UseSwagger();
 
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Product.Microservices");
-            //});
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Product.Microservices");
+            });
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Product.Microservices.Features.ProductFeatures.Queries;
+using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,17 +11,12 @@ namespace Product.Microservices.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult GetAll()
-        {
-            return Content("BOB");
-        }
-        //private readonly IMediator _mediator;
+        private readonly IMediator _mediator;
 
-        //public ProductController(IMediator mediator)
-        //{
-        //    _mediator = mediator;
-        //}
+        public ProductController(IMediator mediator)
+        {
+            _mediator = mediator;
+        }
 
         //[HttpPost]
         //public async Task<IActionResult> Create(CreateProductCommand command)
@@ -26,11 +24,11 @@ namespace Product.Microservices.Controllers
         //    return Ok(await _mediator.Send(command));
         //}
 
-        //[HttpGet]
-        //public async Task<IActionResult> GetAll()
-        //{
-        //    return Ok(await _mediator.Send(new GetAllProductsQuery()));
-        //}
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok(await _mediator.Send(new GetAllProductsQuery()));
+        }
 
         //[HttpGet("{id}")]
         //public async Task<IActionResult> GetById(int id)
