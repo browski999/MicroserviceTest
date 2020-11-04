@@ -1,5 +1,4 @@
-﻿using MediatR;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -11,12 +10,12 @@ namespace Product.Microservices.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly IMediator _mediator;
+        //private readonly IMediator _mediator;
 
-        public ProductController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
+        //public ProductController(IMediator mediator)
+        //{
+        //    _mediator = mediator;
+        //}
 
         //[HttpPost]
         //public async Task<IActionResult> Create(CreateProductCommand command)
