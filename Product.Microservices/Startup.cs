@@ -21,6 +21,7 @@ namespace Product.Microservices
 
         // This method gets called by the runtime. Use this method to add services to the container.
         // Last test again
+        // Added another test comment to see if now, the whole thing works
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<ProductDbContext>(options =>
