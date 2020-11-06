@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace Product.Microservices
 {
@@ -27,15 +28,15 @@ namespace Product.Microservices
             //services.AddScoped<IProductDbContext>(provider => provider.GetService<ProductDbContext>());
             //services.AddMediatR(Assembly.GetExecutingAssembly());
 
-            //services.AddSwaggerGen(c =>
-            //{
-            //    c.IncludeXmlComments(string.Format(@"{0}\Product.Microservices.xml", System.AppDomain.CurrentDomain.BaseDirectory));
-            //    c.SwaggerDoc("v1", new OpenApiInfo
-            //    {
-            //        Version = "v1",
-            //        Title = "Product.Microservices"
-            //    });
-            //});
+            services.AddSwaggerGen(c =>
+            {
+                c.IncludeXmlComments(string.Format(@"{0}\Product.Microservices.xml", System.AppDomain.CurrentDomain.BaseDirectory));
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "Product.Microservices"
+                });
+            });
 
             services.AddControllers();
         }
@@ -54,12 +55,12 @@ namespace Product.Microservices
 
             app.UseAuthorization();
 
-            //app.UseSwagger();
+            app.UseSwagger();
 
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Product.Microservices");
-            //});
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Product.Microservices");
+            });
 
             app.UseEndpoints(endpoints =>
             {
