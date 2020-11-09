@@ -28,78 +28,13 @@ namespace Product.Microservices.Controllers
         public async Task<IActionResult> GetAll()
         {
             return Ok(await _mediator.Send(new GetAllProductsQuery()));
-            //var productList = new List<Models.Product>
-            //    {
-            //        new Models.Product
-            //        {
-            //            Id = 1,
-            //            Barcode = "Test string",
-            //            ConfidentialData = "Some confidential data",
-            //            BuyingPrice = 12.95m,
-            //            Description = "This is a test description",
-            //            IsActive = false,
-            //            Name = "One product",
-            //            Rate = 15.0m,
-            //            SKU = "test sku"
-            //        },
-            //        new Models.Product
-            //        {
-            //            Id = 2,
-            //            Barcode = "Test string 1",
-            //            ConfidentialData = "Some confidential data with another",
-            //            BuyingPrice = 2.95m,
-            //            Description = "This is a test description",
-            //            IsActive = false,
-            //            Name = "One product",
-            //            Rate = 15.0m,
-            //            SKU = "test sku"
-            //        },
-            //        new Models.Product
-            //        {
-            //            Id = 3,
-            //            Barcode = "Test string",
-            //            ConfidentialData = "Some confidential data",
-            //            BuyingPrice = 12.95m,
-            //            Description = "This is a test description",
-            //            IsActive = false,
-            //            Name = "One product",
-            //            Rate = 15.0m,
-            //            SKU = "test sku"
-            //        },
-            //        new Models.Product
-            //        {
-            //            Id = 4,
-            //            Barcode = "Test string",
-            //            ConfidentialData = "Some confidential data",
-            //            BuyingPrice = 12.95m,
-            //            Description = "This is a test description",
-            //            IsActive = false,
-            //            Name = "One product",
-            //            Rate = 15.0m,
-            //            SKU = "test sku"
-            //        },
-            //        new Models.Product
-            //        {
-            //            Id = 5,
-            //            Barcode = "Test string",
-            //            ConfidentialData = "Some confidential data",
-            //            BuyingPrice = 12.95m,
-            //            Description = "This is a test description",
-            //            IsActive = false,
-            //            Name = "One product",
-            //            Rate = 15.0m,
-            //            SKU = "test sku"
-            //        },
-            //    };
-
-            //return productList;
         }
 
-        //[HttpGet("{id}")]
-        //public async Task<IActionResult> GetById(int id)
-        //{
-        //    return Ok(await _mediator.Send(new GetProductByIdQuery { Id = id }));
-        //}
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            return Ok(await _mediator.Send(new GetProductByIdQuery { Id = id }));
+        }
 
         //[HttpDelete("{id}")]
         //public async Task<IActionResult> Delete(int id)

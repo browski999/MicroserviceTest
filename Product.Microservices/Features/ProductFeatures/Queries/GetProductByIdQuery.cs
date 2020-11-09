@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -20,9 +19,21 @@ namespace Product.Microservices.Features.ProductFeatures.Queries
 
             public async Task<Models.Product> Handle(GetProductByIdQuery query, CancellationToken cancellationToken)
             {
-                var product = _context.Products.Where(x => x.Id == query.Id).FirstOrDefault();
+                //var product = _context.Products.Where(x => x.Id == query.Id).FirstOrDefault();
 
-                if (product == null) return null;
+                //if (product == null) return null;
+                var product = new Models.Product
+                {
+                    Id = 1,
+                    Name = "A brand new product",
+                    Description = "This is a test",
+                    ConfidentialData = "Not at all confidential",
+                    Barcode = "Some random",
+                    BuyingPrice = 15.99m,
+                    IsActive = false,
+                    Rate = 23.95m,
+                    SKU = "A description"
+                };
 
                 return product;
             }
