@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Product.Microservices.Features.ProductFeatures.Commands;
 using Product.Microservices.Features.ProductFeatures.Queries;
 using System.Threading.Tasks;
 
@@ -18,11 +19,11 @@ namespace Product.Microservices.Controllers
             _mediator = mediator;
         }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Create(CreateProductCommand command)
-        //{
-        //    return Ok(await _mediator.Send(command));
-        //}
+        [HttpPost]
+        public async Task<IActionResult> Create(CreateProductCommand command)
+        {
+            return Ok(await _mediator.Send(command));
+        }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -36,21 +37,21 @@ namespace Product.Microservices.Controllers
             return Ok(await _mediator.Send(new GetProductByIdQuery { Id = id }));
         }
 
-        //[HttpDelete("{id}")]
-        //public async Task<IActionResult> Delete(int id)
-        //{
-        //    return Ok(await _mediator.Send(new DeleteProductByIdCommand { Id = id }));
-        //}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            return Ok(await _mediator.Send(new DeleteProductByIdCommand { Id = id }));
+        }
 
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> Update(int id, UpdateProductCommand command)
-        //{
-        //    if (id != command.Id)
-        //    {
-        //        return BadRequest(typeof(UpdateProductCommand));
-        //    }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, UpdateProductCommand command)
+        {
+            if (id != command.Id)
+            {
+                return BadRequest(typeof(UpdateProductCommand));
+            }
 
-        //    return Ok(await _mediator.Send(command));
-        //}
+            return Ok(await _mediator.Send(command));
+        }
     }
 }
