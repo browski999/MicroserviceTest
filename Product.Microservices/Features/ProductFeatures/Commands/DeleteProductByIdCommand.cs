@@ -1,6 +1,4 @@
 ﻿using MediatR;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -21,13 +19,15 @@ namespace Product.Microservices.Features.ProductFeatures.Commands
 
             public async Task<int> Handle(DeleteProductByIdCommand command, CancellationToken cancellationToken)
             {
-                var product = await _context.Products.Where(x => x.Id == command.Id).FirstOrDefaultAsync();
-                if (product == null) return default;
+                //var product = await _context.Products.Where(x => x.Id == command.Id).FirstOrDefaultAsync();
+                //if (product == null) return default;
 
-                _context.Products.Remove(product);
-                await _context.SaveChanges();
+                //_context.Products.Remove(product);
+                //await _context.SaveChanges();
 
-                return product.Id;
+                //return product.Id;
+
+                return 99;
             }
         }
     }
