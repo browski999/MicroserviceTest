@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -24,23 +23,25 @@ namespace Customer.Microservices.Features.CustomerFeatures.Commands
 
             public async Task<int> Handle(UpdateCustomerCommand command, CancellationToken cancellationToken)
             {
-                var customer = _context.Customers.Where(x => x.Id == command.Id).FirstOrDefault();
+                //var customer = _context.Customers.Where(x => x.Id == command.Id).FirstOrDefault();
 
-                if (customer == null)
-                {
-                    return default;
-                }
-                else
-                {
-                    customer.Forename = command.Forename;
-                    customer.Surname = command.Surname;
-                    customer.Age = command.Age;
-                    customer.EmailAddress = command.EmailAddress;
+                //if (customer == null)
+                //{
+                //    return default;
+                //}
+                //else
+                //{
+                //    customer.Forename = command.Forename;
+                //    customer.Surname = command.Surname;
+                //    customer.Age = command.Age;
+                //    customer.EmailAddress = command.EmailAddress;
 
-                    _context.Customers.Update(customer);
-                    await _context.SaveChanges();
-                    return customer.Id;
-                }
+                //    _context.Customers.Update(customer);
+                //    await _context.SaveChanges();
+                //    return customer.Id;
+                //}
+
+                return 302;
             }
         }
     }

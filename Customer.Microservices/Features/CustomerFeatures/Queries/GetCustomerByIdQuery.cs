@@ -1,6 +1,4 @@
 ﻿using MediatR;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -21,7 +19,17 @@ namespace Customer.Microservices.Features.CustomerFeatures.Queries
 
             public async Task<Models.Customer> Handle(GetCustomerByIdQuery query, CancellationToken cancellationToken)
             {
-                var customer = await _context.Customers.Where(x => x.Id == query.Id).FirstOrDefaultAsync();
+                //var customer = await _context.Customers.Where(x => x.Id == query.Id).FirstOrDefaultAsync();
+
+                var customer = new Models.Customer
+                {
+                    Id = 2,
+                    Forename = "Kevin",
+                    Surname = "Jones",
+                    EmailAddress = "kevin.jones@gmail.com",
+                    Age = 23
+                };
+
                 if (customer == null) return null;
 
                 return customer;

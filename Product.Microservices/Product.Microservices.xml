@@ -51,55 +51,6 @@
             <param name="command"></param>
             <returns></returns>
         </member>
-        <member name="T:Product.Microservices.Features.ProductFeatures.Commands.CreateProductCommand">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Product.Microservices.Features.ProductFeatures.Commands.CreateProductCommand.Name">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Product.Microservices.Features.ProductFeatures.Commands.CreateProductCommand.Barcode">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Product.Microservices.Features.ProductFeatures.Commands.CreateProductCommand.Description">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Product.Microservices.Features.ProductFeatures.Commands.CreateProductCommand.BuyingPrice">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Product.Microservices.Features.ProductFeatures.Commands.CreateProductCommand.Rate">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="T:Product.Microservices.Features.ProductFeatures.Commands.CreateProductCommand.CreateProductCommandHandler">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Product.Microservices.Features.ProductFeatures.Commands.CreateProductCommand.CreateProductCommandHandler.#ctor(Product.Microservices.IProductDbContext)">
-            <summary>
-            
-            </summary>
-            <param name="context"></param>
-        </member>
-        <member name="M:Product.Microservices.Features.ProductFeatures.Commands.CreateProductCommand.CreateProductCommandHandler.Handle(Product.Microservices.Features.ProductFeatures.Commands.CreateProductCommand,System.Threading.CancellationToken)">
-            <summary>
-            
-            </summary>
-            <param name="command"></param>
-            <param name="cancellationToken"></param>
-            <returns></returns>
-        </member>
         <member name="T:Product.Microservices.Features.ProductFeatures.Commands.DeleteProductByIdCommand">
             <summary>
             
