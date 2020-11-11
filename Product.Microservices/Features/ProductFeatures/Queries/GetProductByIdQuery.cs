@@ -4,22 +4,41 @@ using System.Threading.Tasks;
 
 namespace Product.Microservices.Features.ProductFeatures.Queries
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class GetProductByIdQuery : IRequest<Models.Product>
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public int Id { get; set; }
 
+        /// <summary>
+        /// /
+        /// </summary>
         public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery, Models.Product>
         {
             private readonly IProductDbContext _context;
 
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="context"></param>
             public GetProductByIdQueryHandler(IProductDbContext context)
             {
                 _context = context;
             }
 
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="query"></param>
+            /// <param name="cancellationToken"></param>
+            /// <returns></returns>
             public async Task<Models.Product> Handle(GetProductByIdQuery query, CancellationToken cancellationToken)
             {
-                //var product = _context.Products.Where(x => x.Id == query.Id).FirstOrDefault();
+                //var product = await _context.Products.Where(x => x.Id == query.Id).FirstOrDefaultAsync();
 
                 //if (product == null) return null;
                 var product = new Models.Product

@@ -5,17 +5,33 @@ using System.Threading.Tasks;
 
 namespace Product.Microservices.Features.ProductFeatures.Queries
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class GetAllProductsQuery : IRequest<IEnumerable<Models.Product>>
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, IEnumerable<Models.Product>>
         {
             private readonly IProductDbContext _context;
 
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="context"></param>
             public GetAllProductsQueryHandler(IProductDbContext context)
             {
                 _context = context;
             }
 
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="query"></param>
+            /// <param name="cancellationToken"></param>
+            /// <returns></returns>
             public async Task<IEnumerable<Models.Product>> Handle(GetAllProductsQuery query, CancellationToken cancellationToken)
             {
                 //var productList = await _context.Products.ToListAsync();
