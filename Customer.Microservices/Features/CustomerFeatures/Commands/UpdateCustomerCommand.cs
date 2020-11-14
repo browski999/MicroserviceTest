@@ -2,7 +2,7 @@
 
 namespace Customer.Microservices.Features.CustomerFeatures.Commands
 {
-    public partial class UpdateCustomerCommand : IRequest<int>
+    public class UpdateCustomerCommand : IRequest<int>
     {
         public int Id { get; set; }
         public string Forename { get; set; }

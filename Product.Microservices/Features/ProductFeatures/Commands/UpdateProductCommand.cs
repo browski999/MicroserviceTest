@@ -5,7 +5,7 @@ namespace Product.Microservices.Features.ProductFeatures.Commands
     /// <summary>
     /// 
     /// </summary>
-    public partial class UpdateProductCommand : IRequest<int>
+    public class UpdateProductCommand : IRequest<int>
     {
         /// <summary>
         /// 

@@ -5,7 +5,7 @@ namespace Product.Microservices.Features.ProductFeatures.Queries
     /// <summary>
     /// 
     /// </summary>
-    public partial class GetProductByIdQuery : IRequest<Models.Product>
+    public class GetProductByIdQuery : IRequest<Models.Product>
     {
         /// <summary>
         /// 

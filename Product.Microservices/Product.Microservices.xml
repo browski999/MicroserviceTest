@@ -56,18 +56,37 @@
             
             </summary>
         </member>
-        <member name="T:Product.Microservices.Features.ProductFeatures.Commands.DeleteProductByIdCommand.DeleteProductByIdCommandHandler">
+        <member name="T:Product.Microservices.Features.ProductFeatures.Commands.DeleteProductByIdCommandHandler">
             <summary>
             
             </summary>
         </member>
-        <member name="M:Product.Microservices.Features.ProductFeatures.Commands.DeleteProductByIdCommand.DeleteProductByIdCommandHandler.#ctor(Product.Microservices.IProductDbContext)">
+        <member name="M:Product.Microservices.Features.ProductFeatures.Commands.DeleteProductByIdCommandHandler.#ctor(Product.Microservices.IProductDbContext)">
             <summary>
             
             </summary>
             <param name="context"></param>
         </member>
-        <member name="M:Product.Microservices.Features.ProductFeatures.Commands.DeleteProductByIdCommand.DeleteProductByIdCommandHandler.Handle(Product.Microservices.Features.ProductFeatures.Commands.DeleteProductByIdCommand,System.Threading.CancellationToken)">
+        <member name="M:Product.Microservices.Features.ProductFeatures.Commands.DeleteProductByIdCommandHandler.Handle(Product.Microservices.Features.ProductFeatures.Commands.DeleteProductByIdCommand,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="command"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Product.Microservices.Features.ProductFeatures.Commands.UpdateProductCommandHandler">
+            <summary>
+            /
+            </summary>
+        </member>
+        <member name="M:Product.Microservices.Features.ProductFeatures.Commands.UpdateProductCommandHandler.#ctor(Product.Microservices.IProductDbContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Product.Microservices.Features.ProductFeatures.Commands.UpdateProductCommandHandler.Handle(Product.Microservices.Features.ProductFeatures.Commands.UpdateProductCommand,System.Threading.CancellationToken)">
             <summary>
             
             </summary>
@@ -79,25 +98,6 @@
             <summary>
             
             </summary>
-        </member>
-        <member name="T:Product.Microservices.Features.ProductFeatures.Commands.UpdateProductCommand.UpdateProductCommandHandler">
-            <summary>
-            /
-            </summary>
-        </member>
-        <member name="M:Product.Microservices.Features.ProductFeatures.Commands.UpdateProductCommand.UpdateProductCommandHandler.#ctor(Product.Microservices.IProductDbContext)">
-            <summary>
-            
-            </summary>
-            <param name="context"></param>
-        </member>
-        <member name="M:Product.Microservices.Features.ProductFeatures.Commands.UpdateProductCommand.UpdateProductCommandHandler.Handle(Product.Microservices.Features.ProductFeatures.Commands.UpdateProductCommand,System.Threading.CancellationToken)">
-            <summary>
-            
-            </summary>
-            <param name="command"></param>
-            <param name="cancellationToken"></param>
-            <returns></returns>
         </member>
         <member name="P:Product.Microservices.Features.ProductFeatures.Commands.UpdateProductCommand.Id">
             <summary>
@@ -134,25 +134,6 @@
             
             </summary>
         </member>
-        <member name="T:Product.Microservices.Features.ProductFeatures.Queries.GetAllProductsQuery.GetAllProductsQueryHandler">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="M:Product.Microservices.Features.ProductFeatures.Queries.GetAllProductsQuery.GetAllProductsQueryHandler.#ctor(Product.Microservices.IProductDbContext)">
-            <summary>
-            
-            </summary>
-            <param name="context"></param>
-        </member>
-        <member name="M:Product.Microservices.Features.ProductFeatures.Queries.GetAllProductsQuery.GetAllProductsQueryHandler.Handle(Product.Microservices.Features.ProductFeatures.Queries.GetAllProductsQuery,System.Threading.CancellationToken)">
-            <summary>
-            
-            </summary>
-            <param name="query"></param>
-            <param name="cancellationToken"></param>
-            <returns></returns>
-        </member>
         <member name="T:Product.Microservices.Features.ProductFeatures.Queries.GetProductByIdQuery">
             <summary>
             
@@ -163,18 +144,37 @@
             
             </summary>
         </member>
-        <member name="T:Product.Microservices.Features.ProductFeatures.Queries.GetProductByIdQuery.GetProductByIdQueryHandler">
+        <member name="T:Product.Microservices.Features.ProductFeatures.Queries.GetAllProductsQueryHandler">
             <summary>
-            /
+            
             </summary>
         </member>
-        <member name="M:Product.Microservices.Features.ProductFeatures.Queries.GetProductByIdQuery.GetProductByIdQueryHandler.#ctor(Product.Microservices.IProductDbContext)">
+        <member name="M:Product.Microservices.Features.ProductFeatures.Queries.GetAllProductsQueryHandler.#ctor(Product.Microservices.IProductDbContext)">
             <summary>
             
             </summary>
             <param name="context"></param>
         </member>
-        <member name="M:Product.Microservices.Features.ProductFeatures.Queries.GetProductByIdQuery.GetProductByIdQueryHandler.Handle(Product.Microservices.Features.ProductFeatures.Queries.GetProductByIdQuery,System.Threading.CancellationToken)">
+        <member name="M:Product.Microservices.Features.ProductFeatures.Queries.GetAllProductsQueryHandler.Handle(Product.Microservices.Features.ProductFeatures.Queries.GetAllProductsQuery,System.Threading.CancellationToken)">
+            <summary>
+            
+            </summary>
+            <param name="query"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Product.Microservices.Features.ProductFeatures.Queries.GetProductByIdQueryHandler">
+            <summary>
+            /
+            </summary>
+        </member>
+        <member name="M:Product.Microservices.Features.ProductFeatures.Queries.GetProductByIdQueryHandler.#ctor(Product.Microservices.IProductDbContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Product.Microservices.Features.ProductFeatures.Queries.GetProductByIdQueryHandler.Handle(Product.Microservices.Features.ProductFeatures.Queries.GetProductByIdQuery,System.Threading.CancellationToken)">
             <summary>
             
             </summary>

@@ -2,7 +2,7 @@
 
 namespace Product.Microservices.Features.ProductFeatures.Commands
 {
-    public partial class CreateProductCommand : IRequest<int>
+    public class CreateProductCommand : IRequest<int>
     {
 
         public string Name { get; set; }

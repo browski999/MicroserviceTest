@@ -4,42 +4,39 @@ using System.Threading.Tasks;
 
 namespace Product.Microservices.Features.ProductFeatures.Commands
 {
-    public partial class DeleteProductByIdCommand
+    /// <summary>
+    /// 
+    /// </summary>
+    public class DeleteProductByIdCommandHandler : IRequestHandler<DeleteProductByIdCommand, int>
     {
+        private readonly IProductDbContext _context;
+
         /// <summary>
         /// 
         /// </summary>
-        public class DeleteProductByIdCommandHandler : IRequestHandler<DeleteProductByIdCommand, int>
+        /// <param name="context"></param>
+        public DeleteProductByIdCommandHandler(IProductDbContext context)
         {
-            private readonly IProductDbContext _context;
+            _context = context;
+        }
 
-            /// <summary>
-            /// 
-            /// </summary>
-            /// <param name="context"></param>
-            public DeleteProductByIdCommandHandler(IProductDbContext context)
-            {
-                _context = context;
-            }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="command"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public async Task<int> Handle(DeleteProductByIdCommand command, CancellationToken cancellationToken)
+        {
+            //var product = await _context.Products.Where(x => x.Id == command.Id).FirstOrDefaultAsync();
+            //if (product == null) return default;
 
-            /// <summary>
-            /// 
-            /// </summary>
-            /// <param name="command"></param>
-            /// <param name="cancellationToken"></param>
-            /// <returns></returns>
-            public async Task<int> Handle(DeleteProductByIdCommand command, CancellationToken cancellationToken)
-            {
-                //var product = await _context.Products.Where(x => x.Id == command.Id).FirstOrDefaultAsync();
-                //if (product == null) return default;
+            //_context.Products.Remove(product);
+            //await _context.SaveChanges();
 
-                //_context.Products.Remove(product);
-                //await _context.SaveChanges();
+            //return product.Id;
 
-                //return product.Id;
-
-                return 99;
-            }
+            return 99;
         }
     }
 }

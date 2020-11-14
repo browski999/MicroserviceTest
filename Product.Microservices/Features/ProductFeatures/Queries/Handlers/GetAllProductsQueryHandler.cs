@@ -5,35 +5,33 @@ using System.Threading.Tasks;
 
 namespace Product.Microservices.Features.ProductFeatures.Queries
 {
-    public partial class GetAllProductsQuery
+    /// <summary>
+    /// 
+    /// </summary>
+    public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, IEnumerable<Models.Product>>
     {
+        private readonly IProductDbContext _context;
+
         /// <summary>
         /// 
         /// </summary>
-        public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, IEnumerable<Models.Product>>
+        /// <param name="context"></param>
+        public GetAllProductsQueryHandler(IProductDbContext context)
         {
-            private readonly IProductDbContext _context;
+            _context = context;
+        }
 
-            /// <summary>
-            /// 
-            /// </summary>
-            /// <param name="context"></param>
-            public GetAllProductsQueryHandler(IProductDbContext context)
-            {
-                _context = context;
-            }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<Models.Product>> Handle(GetAllProductsQuery query, CancellationToken cancellationToken)
+        {
+            //var productList = await _context.Products.ToListAsync();
 
-            /// <summary>
-            /// 
-            /// </summary>
-            /// <param name="query"></param>
-            /// <param name="cancellationToken"></param>
-            /// <returns></returns>
-            public async Task<IEnumerable<Models.Product>> Handle(GetAllProductsQuery query, CancellationToken cancellationToken)
-            {
-                //var productList = await _context.Products.ToListAsync();
-
-                var productList = new List<Models.Product>
+            var productList = new List<Models.Product>
                 {
                     new Models.Product
                     {
@@ -97,13 +95,12 @@ namespace Product.Microservices.Features.ProductFeatures.Queries
                     },
                 };
 
-                if (productList == null)
-                {
-                    return null;
-                }
-
-                return productList.AsReadOnly();
+            if (productList == null)
+            {
+                return null;
             }
+
+            return productList.AsReadOnly();
         }
     }
 }
