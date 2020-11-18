@@ -2,7 +2,6 @@
 using Product.Microservices.Features.ProductFeatures.Queries;
 using System.Linq;
 using Xunit;
-using static Product.Microservices.Features.ProductFeatures.Queries.GetAllProductsQuery;
 
 namespace Product.Microservices.Tests
 {

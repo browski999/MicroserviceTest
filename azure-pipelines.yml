@@ -53,7 +53,7 @@ steps:
  - task: DotNetCoreCLI@2
   inputs:
     command: test
-    projects: '**/Product.Microservices.Tests.csproj'
+    projects: '**/*Tests/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
     
 - task: DotNetCoreCLI@2

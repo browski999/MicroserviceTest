@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product.Microservices", "Pr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customer.Microservices", "Customer.Microservices\Customer.Microservices.csproj", "{94E812AB-5772-4B02-A22A-3A51D5808C88}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{EBA7F2A4-F58B-4198-964B-D0D289754F54}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{EBA7F2A4-F58B-4198-964B-D0D289754F54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Microservices.Tests", "Product.Microservices.Tests\Product.Microservices.Tests.csproj", "{DCC55866-E93B-4AD7-8458-3F7C7A625E75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product.Microservices.Tests", "Product.Microservices.Tests\Product.Microservices.Tests.csproj", "{DCC55866-E93B-4AD7-8458-3F7C7A625E75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
