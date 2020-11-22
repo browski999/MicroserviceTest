@@ -26,7 +26,7 @@ namespace Product.Microservices
             //    options.UseSqlServer(
             //        Configuration.GetConnectionString("ProductConnection"),
             //        b => b.MigrationsAssembly(typeof(ProductDbContext).Assembly.FullName)));
-
+            //
             services.AddScoped<IProductDbContext>(provider => provider.GetService<ProductDbContext>());
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
