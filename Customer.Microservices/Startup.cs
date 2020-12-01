@@ -26,10 +26,11 @@ namespace Customer.Microservices
         {
             services.AddDbContext<CustomerDbContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("CustomerConnection"),
+                    Configuration["ConnectionStrings:CustomerConnection"],
                     b => b.MigrationsAssembly(typeof(CustomerDbContext).Assembly.FullName)));
 
             services.AddScoped<ICustomerDbContext>(provider => provider.GetService<CustomerDbContext>());
+            services.AddMediatR(Assembly.GetExecutingAssembly());
 
             services.AddSwaggerGen(c =>
             {
@@ -42,8 +43,6 @@ namespace Customer.Microservices
             });
 
             services.AddControllers();
-
-            services.AddMediatR(Assembly.GetExecutingAssembly());
         }
 
         /// <summary>
@@ -75,7 +74,6 @@ namespace Customer.Microservices
             {
                 endpoints.MapControllers();
             });
-
         }
     }
 }
