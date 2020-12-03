@@ -27,6 +27,7 @@ namespace Customer.Microservices
             //    options.UseSqlServer(
             //        Configuration["ConnectionStrings:CustomerConnection"],
             //        b => b.MigrationsAssembly(typeof(CustomerDbContext).Assembly.FullName)));
+            //
 
             services.AddScoped<ICustomerDbContext>(provider => provider.GetService<CustomerDbContext>());
             services.AddMediatR(Assembly.GetExecutingAssembly());
