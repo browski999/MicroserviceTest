@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using Serilog;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace Customer.Microservices.Features.CustomerFeatures.Queries
             public async Task<IEnumerable<Models.Customer>> Handle(GetAllCustomersQuery query, CancellationToken cancellationToken)
             {
                 //var customerList = await _context.Customers.ToListAsync();
+
+                Log.Information("Start of GetAllCustomers Handler");
 
                 var customerList = new List<Models.Customer>
                 {
@@ -69,9 +72,9 @@ namespace Customer.Microservices.Features.CustomerFeatures.Queries
                     return null;
                 }
 
-                return customerList.AsReadOnly();
+                Log.Information("End of GetAllCustomers Handler");
 
-                //return customerList.AsReadOnly();
+                return customerList.AsReadOnly();
             }
         }
     }

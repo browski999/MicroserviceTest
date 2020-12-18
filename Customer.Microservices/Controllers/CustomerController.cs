@@ -2,6 +2,7 @@
 using Customer.Microservices.Features.CustomerFeatures.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using System.Threading.Tasks;
 
 namespace Customer.Microservices.Controllers
@@ -44,7 +45,9 @@ namespace Customer.Microservices.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
+            Log.Information("Start of the GetAll method call");
             return Ok(await _mediator.Send(new GetAllCustomersQuery()));
+            Log.Information("End of the GetAll method call");
         }
 
         /// <summary>
