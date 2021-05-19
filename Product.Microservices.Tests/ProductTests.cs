@@ -10,7 +10,7 @@ namespace Product.Microservices.Tests
         [Fact]
         public async void ShouldReturnAListOfProduct()
         {
-            //Arrang
+            //Arrange
             var context = new Mock<IProductDbContext>();
 
             GetAllProductsQuery query = new GetAllProductsQuery();
