@@ -24,6 +24,7 @@ namespace Product.Microservices.Features.ProductFeatures.Commands
 
             //_context.Products.Add(product);
             //await _context.SaveChanges();
+            //test change
 
             var product = new Models.Product
             {

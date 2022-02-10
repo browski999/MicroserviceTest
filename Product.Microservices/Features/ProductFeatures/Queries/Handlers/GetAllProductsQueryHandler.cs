@@ -95,11 +95,6 @@ namespace Product.Microservices.Features.ProductFeatures.Queries
                     },
                 };
 
-            if (productList == null)
-            {
-                return null;
-            }
-
             return productList.AsReadOnly();
         }
     }

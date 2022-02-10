@@ -1,0 +1,2 @@
+{"Timestamp":"2021-08-26T15:00:56.9098472+00:00","Level":"Information","MessageTemplate":"Application Starting.","Properties":{"MachineName":"339c5efba01a","ProcessId":43,"ThreadId":1,"ApplicationName":"Customer.Microservices"}}
+{"Timestamp":"2021-08-26T15:01:21.2179737+00:00","Level":"Information","MessageTemplate":"Application Starting.","Properties":{"MachineName":"339c5efba01a","ProcessId":106,"ThreadId":1,"ApplicationName":"Customer.Microservices"}}

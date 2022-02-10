@@ -25,7 +25,7 @@ namespace Product.Microservices.Tests
 
             //Assert
             Assert.True(result.Count() > 1);
-            Assert.False(result.Count() < 1);
+            Assert.False(result.Any());
 
         }
 

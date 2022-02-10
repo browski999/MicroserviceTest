@@ -28,8 +28,6 @@ namespace Customer.Microservices.Features.CustomerFeatures.Queries
                     Age = 23
                 };
 
-                if (customer == null) return null;
-
                 return customer;
             }
         }

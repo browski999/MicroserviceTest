@@ -15,23 +15,15 @@ namespace Customer.Microservices.Features.CustomerFeatures.Commands
 
         public async Task<int> Handle(CreateCustomerCommand command, CancellationToken cancellationToken)
         {
-            //var customer = new Models.Customer();
-            //customer.Forename = command.Forename;
-            //customer.Surname = command.Surname;
-            //customer.Age = command.Age;
-            //customer.EmailAddress = command.EmailAddress;
+            var customer = new Models.Customer();
+            customer.Forename = command.Forename;
+            customer.Surname = command.Surname;
+            customer.Age = command.Age;
+            customer.EmailAddress = command.EmailAddress;
 
-            //_context.Customers.Add(customer);
-            //await _context.SaveChanges();
+            _context.Customers.Add(customer);
 
-            var customer = new Models.Customer
-            {
-                Id = 32,
-                Forename = "James",
-                Surname = "Brown",
-                EmailAddress = "james.brown@bbc.co.uk",
-                Age = 43
-            };
+            await _context.SaveChanges();           
 
             return customer.Id;
         }

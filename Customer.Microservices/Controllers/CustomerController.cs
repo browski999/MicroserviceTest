@@ -47,7 +47,6 @@ namespace Customer.Microservices.Controllers
         {
             Log.Information("Start of the GetAll method call");
             return Ok(await _mediator.Send(new GetAllCustomersQuery()));
-            Log.Information("End of the GetAll method call");
         }
 
         /// <summary>

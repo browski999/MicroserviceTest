@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,11 +24,10 @@ namespace Customer.Microservices
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddDbContext<CustomerDbContext>(options =>
-            //    options.UseSqlServer(
-            //        Configuration["ConnectionStrings:CustomerConnection"],
-            //        b => b.MigrationsAssembly(typeof(CustomerDbContext).Assembly.FullName)));
-            //
+            services.AddDbContext<CustomerDbContext>(options =>
+                options.UseSqlServer(
+                    Configuration["ConnectionStrings:CustomerConnectionString"],
+                    b => b.MigrationsAssembly(typeof(CustomerDbContext).Assembly.FullName)));
 
             services.AddScoped<ICustomerDbContext>(provider => provider.GetService<CustomerDbContext>());
             services.AddMediatR(Assembly.GetExecutingAssembly());
