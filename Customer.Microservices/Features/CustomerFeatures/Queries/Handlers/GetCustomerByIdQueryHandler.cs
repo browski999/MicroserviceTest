@@ -22,7 +22,7 @@ namespace Customer.Microservices.Features.CustomerFeatures.Queries
                 var customer = new Models.Customer
                 {
                     Id = 2,
-                    Forename = "Kevin",
+                    Forename = "Kevi",
                     Surname = "Jones",
                     EmailAddress = "kevin.jones@gmail.com",
                     Age = 23
