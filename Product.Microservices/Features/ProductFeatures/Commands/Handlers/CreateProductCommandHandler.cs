@@ -29,7 +29,7 @@ namespace Product.Microservices.Features.ProductFeatures.Commands
             var product = new Models.Product
             {
                 Id = 9,
-                Name = "A brand new created product",
+                Name = "A brand new created products",
                 Description = "This is the second test",
                 ConfidentialData = "Very confidential",
                 Barcode = "Some random barcode",
