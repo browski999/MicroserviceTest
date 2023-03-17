@@ -30,7 +30,7 @@ namespace Customer.Microservices.Controllers
         /// <summary>
         /// Action to create a new Customer
         /// </summary>
-        /// <param name="command"></param>
+        /// <param name="commanfd"></param>
         /// <returns>Newly created Customer Id</returns>
         [HttpPost]
         public async Task<IActionResult> Create(CreateCustomerCommand command)
