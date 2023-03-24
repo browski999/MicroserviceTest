@@ -7,6 +7,9 @@ namespace Customer.Microservices.Features.CustomerFeatures.Commands
 {
     public class UpdateCustomerCommandHandler : IRequestHandler<UpdateCustomerCommand, int>
     {
+        /// <summary>
+        /// 
+        /// </summary>
         private readonly ICustomerDbContext _context;
 
         public UpdateCustomerCommandHandler(ICustomerDbContext context)
