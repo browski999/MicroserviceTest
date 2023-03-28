@@ -27,8 +27,8 @@ env:
 on:
   push:
     branches: [ "master" ]
-    paths:        
-        - '!Product.Microservices.Tests.csproj'
+    paths-ignore:        
+        - './Product.Microservices.Tests'
   workflow_dispatch:
 
 permissions:
