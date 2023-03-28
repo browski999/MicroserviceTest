@@ -28,8 +28,8 @@ on:
   push:
     branches: [ "master" ]
     paths: 
-        - 'Microservices.WebApi.sln'
-        - '!Product.Microservices.Tests/Product.Microservices.Tests.csproj'
+        - './Microservices.WebApi.sln'
+        - '!./Product.Microservices.Tests.csproj'
   workflow_dispatch:
 
 permissions:
