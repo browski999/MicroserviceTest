@@ -27,8 +27,7 @@ env:
 on:
   push:
     branches: [ "master" ]
-    paths: 
-        - 'Microservices.WebApi.sln'
+    paths:        
         - '!Product.Microservices.Tests.csproj'
   workflow_dispatch:
 
